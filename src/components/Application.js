@@ -52,12 +52,11 @@ export default function Application() {
       .then((response) => {
         console.log(response.data);
         setDays(response.data);
-        setDay(days.name)
       })
       .catch((error) => error.message);
     //setDays([...response])
   }, []);
-
+  
   return (
     <main className="layout">
       <section className="sidebar">
@@ -68,7 +67,7 @@ export default function Application() {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList days={days} value={day} onChange={setDays} />
+          <DayList days={days} value="Monday" onChange={setDays} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
