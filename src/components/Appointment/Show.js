@@ -1,6 +1,6 @@
 import React from "react";
 export default function Show({ student, interviewer, onEdit, onDelete, id }) {
-  console.log(interviewer);
+  console.log(interviewer, 'student', student);
   return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">
@@ -16,7 +16,7 @@ export default function Show({ student, interviewer, onEdit, onDelete, id }) {
             className="appointment__actions-button"
             src="images/edit.png"
             alt="Edit"
-            onClick={onEdit}
+            onClick={() => onEdit(student)}
           />
           <img
             className="appointment__actions-button"

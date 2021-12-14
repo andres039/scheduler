@@ -39,13 +39,13 @@ export default function Application() {
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
-      interview: null
+      interview: null,
     };
     const appointments = {
       ...state.appointments,
       [id]: appointment,
     };
-     
+
     return axios
       .delete(`/api/appointments/${id}`)
       .then(() => {
@@ -53,8 +53,8 @@ export default function Application() {
           ...state,
           appointments,
         });
-      });
-  
+      })
+      
   }
 
   function bookInterview(id, interview) {
@@ -74,7 +74,8 @@ export default function Application() {
           ...state,
           appointments,
         });
-      });
+      })
+      
   }
 
   return (
