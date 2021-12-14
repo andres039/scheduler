@@ -33,7 +33,7 @@ export default function Appointment({
     transition(SAVING);
     bookInterview(id, interview)
       .then(() => transition(SHOW))
-      .catch((error) => transition(ERROR_SAVE), true);
+      .catch(() => transition(ERROR_SAVE), true);
   }
   function onDelete() {
     transition(CONFIRM);
@@ -42,7 +42,7 @@ export default function Appointment({
     transition(SAVING, true);
     cancelInterview(id)
       .then(() => transition(EMPTY))
-      .catch((error) => transition(ERROR_DELETE), true);
+      .catch(() => transition(ERROR_DELETE), true);
   }
 
   function onEdit() {
