@@ -35,6 +35,16 @@ export default function Appointment({
       .then(() => transition(SHOW))
       .catch(() => transition(ERROR_SAVE), true);
   }
+  function edit(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer,
+    };
+    transition(SAVING);
+    bookInterview(id, interview)
+      .then(() => transition(SHOW))
+      .catch(() => transition(ERROR_SAVE), true);
+  }
   function onDelete() {
     transition(CONFIRM);
   }
@@ -49,7 +59,7 @@ export default function Appointment({
     transition(EDIT);
   }
 
-  //build function delete in the same style as above, use id prop to delete -- Intermediate state to confirm the delete.
+  
   const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
 
   return (
@@ -82,7 +92,7 @@ export default function Appointment({
           interviewers={interviewers}
           interviewer={interview.interviewer.id}
           onCancel={() => back(EMPTY)}
-          onSave={save}
+          onSave={edit}
         />
       )}
       {mode === ERROR_SAVE && (
