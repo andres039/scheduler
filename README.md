@@ -5,8 +5,8 @@ Interview Scheduler integrates a few different techniques in the React framework
 My contribution to the project was in the application of React to present the data to the user in the front end. The application has been tested with Cypress and Jest, and these tests are also available in the repository. 
 
 ## Screenshots
-!["Main"] (https://github.com/andres039/scheduler/blob/main/docs/Main.png?raw=true)
-!["Book appointment"] (https://github.com/andres039/scheduler/blob/main/docs/schedule.png?raw=true)
+!["Main"](https://github.com/andres039/scheduler/blob/main/docs/Main.png?raw=true)
+!["Book appointment"](https://github.com/andres039/scheduler/blob/main/docs/schedule.png?raw=true)
 ## Setup
 
 Install dependencies with `npm install`.
