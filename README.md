@@ -28,3 +28,7 @@ npm test
 ```sh
 npm run storybook
 ```
+## Dependencies
+
+This project uses 'axios' for all of our fetching needs from the database.
+'Classnames' has been implemented as a dynamic way of adding classes to our elements and 'Normalize.css' is our css reset sheet.
