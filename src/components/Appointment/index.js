@@ -43,10 +43,10 @@ export default function Appointment({
       student: name,
       interviewer,
     };
-    transition(SAVING);
+    transition(SAVING, true);
     bookInterview(id, interview)
       .then(() => transition(SHOW))
-      .catch(() => transition(ERROR_SAVE), true);
+      .catch(() => transition(ERROR_SAVE, true));
   }
   function onDelete() {
     transition(CONFIRM);

@@ -16,6 +16,8 @@ export default function useVisualMode(initial) {
     }
     const newHistory = [...history]
     newHistory.pop();
+    newHistory.pop();
+    newHistory.pop();
     setHistory(newHistory)
   }
 
