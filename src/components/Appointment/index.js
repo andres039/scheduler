@@ -81,7 +81,7 @@ export default function Appointment({
       {mode === CREATE && (
         <Form
           interviewers={interviewers}
-          onCancel={() => back(EMPTY)}
+          onCancel={back}
           onSave={save}
         />
       )}
@@ -95,7 +95,7 @@ export default function Appointment({
           student={interview.student}
           interviewers={interviewers}
           interviewer={interview.interviewer.id}
-          onCancel={() => back(EMPTY)}
+          onCancel={back}
           onSave={edit}
         />
       )}
