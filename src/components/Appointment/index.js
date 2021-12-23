@@ -21,6 +21,7 @@ export default function Appointment({
   const SHOW = "SHOW";
   const CREATE = "CREATE";
   const SAVING = "SAVING";
+  const DELETING = "DELETING"
   const CONFIRM = "CONFIRM";
   const EDIT = "EDIT";
   const ERROR_SAVE = "ERROR_SAVE";
@@ -30,10 +31,12 @@ export default function Appointment({
       student: name,
       interviewer,
     };
+
     transition(SAVING);
+
     bookInterview(id, interview)
       .then(() => transition(SHOW))
-      .catch(() => transition(ERROR_SAVE), true);
+      .catch(error => transition(ERROR_SAVE, true));
   }
   function edit(name, interviewer) {
     const interview = {
@@ -49,10 +52,10 @@ export default function Appointment({
     transition(CONFIRM);
   }
   function confirmDelete(id) {
-    transition(SAVING, true);
+    transition(DELETING, true);
     cancelInterview(id)
       .then(() => transition(EMPTY))
-      .catch(() => transition(ERROR_DELETE), true);
+      .catch(error => transition(ERROR_DELETE, true));
   }
 
   function onEdit() {
@@ -83,6 +86,7 @@ export default function Appointment({
         />
       )}
       {mode === SAVING && <Status message={SAVING} />}
+      {mode === DELETING && <Status message={DELETING} />}
       {mode === CONFIRM && (
         <Confirm id={id} onConfirm={confirmDelete} onCancel={back} />
       )}
